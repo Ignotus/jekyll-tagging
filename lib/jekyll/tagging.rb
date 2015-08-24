@@ -130,7 +130,7 @@ module Jekyll
     end
 
     def tag_url(tag, type = :page, site = Tagger.site)
-      url = File.join('', site.config["baseurl"].to_s, site.config["tag_#{type}_dir"], ERB::Util.u(jekyll_tagging_slug(tag)))
+      url = File.join(site.config["url"].to_s, site.config["baseurl"].to_s, site.config["tag_#{type}_dir"], ERB::Util.u(jekyll_tagging_slug(tag)))
       site.permalink_style == :pretty || site.config['tag_permalink_style'] == 'pretty' ? url << '/' : url << '.html'
     end
 
